@@ -7,14 +7,17 @@ def main():
     report(path = book_path, words = words_count, letters = letters_sorted)
 
 def get_text(file):
+    # Returns content of text file
     with open(file) as book:
         return book.read()
 
 def count_words(book_text):
+    # Returns number of ALL words in file
     words = book_text.split()
     return len(words)
 
 def letters_count(text):
+    # Return dictionary with all letters and symbols with numbers letter/symbol was used
     letters = {}
     text_lower = text.lower()
     for l in text_lower:
@@ -25,7 +28,8 @@ def letters_count(text):
     return letters
 
 def report(path, words, letters):
-    print(f"--- Book report of {path} ---")
+    # Prints full report to the console
+    print(f"--- Book report of \033[47;30m{path}\033[0m ---")
     print()
     print(f"Words found: \033[97m{words}\033[0m")
     print()
