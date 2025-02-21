@@ -4,7 +4,12 @@ def main():
     words_count = count_words(text)
     unique_words_list = unique_words(text)
     letters = letters_count(text)
-    report(path = book_path, words = words_count, unique_words = unique_words_list, letters = letters)
+    report(
+        path = book_path,
+        words = words_count,
+        unique_words = unique_words_list,
+        letters = letters
+        )
 
 def get_text(file):
     # Returns content of text file
@@ -45,14 +50,24 @@ def letters_count(text):
 def report(path, words, unique_words, letters):
     # Prints full report to the console
 
+    top_words = dict(list(unique_words.items())[:10])
+
     def white(text):
         return f'\033[97m{text}\033[m'
-    
+ 
     print(f"--- Book report of {white(path)} ---")
     print()
+
+    print('--- Words report ---')
     print(f"Words found: {white(words)}")
     print(f"Unique words: {white(len(unique_words))}")
     print()
+    print(f'- {len(top_words)} most used words -')
+    for word in top_words:
+        print(f'{white(word)}'.ljust(15), f': used {white(top_words[word])} times')
+    print('-' * 20)
+    print()
+    
     print(white('Letters found:'))
     for letter in letters:
         if letter.isalpha():
