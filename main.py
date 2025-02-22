@@ -52,26 +52,41 @@ def report(path, words, unique_words, letters):
 
     top_words = dict(list(unique_words.items())[:10])
 
+    longest_word = 0
+    for word in top_words:
+        if len(word) > longest_word:
+            longest_word = len(word)
+
     def white(text):
-        return f'\033[97m{text}\033[m'
+        # Returns text with white font
+        return f'\033[1;97m{text}\033[m'
+
+    def formatted_word(word, longest_word):
+        # Adds spaces and format to given word
+        if len(word) == longest_word:
+            return word
+        else:
+            return word + ' ' * (longest_word - len(word))
  
+    print()
     print(f"--- Book report of {white(path)} ---")
     print()
 
     print('--- Words report ---')
     print(f"Words found: {white(words)}")
     print(f"Unique words: {white(len(unique_words))}")
+
     print()
     print(f'- {len(top_words)} most used words -')
     for word in top_words:
-        print(f'{white(word)}'.ljust(15), f': used {white(top_words[word])} times')
+        print(f' {white(formatted_word(word, longest_word))}: used {white(top_words[word])} times')
     print('-' * 20)
     print()
     
-    print(white('Letters found:'))
+    print('--- Letters report ---')
     for letter in letters:
         if letter.isalpha():
-            print(f"Letter {white(letter)} was used {white(letters[letter])} times")
+            print(f" {white(letter)}: used {white(letters[letter])} times")
     print()
     print("--- End of report ---")
 
