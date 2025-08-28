@@ -1,5 +1,6 @@
 *BookBot* is my first project!
 
-# Roadmap
-- 💻 Command line arguments
+# Planned Features
+- 💻 Command line arguments support
+- 📁 File selection
 - 🎨 Simple GUI
