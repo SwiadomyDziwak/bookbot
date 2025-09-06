@@ -1,6 +1,14 @@
-*BookBot* is my first project!
+# 📚 BookBot
 
-# Planned Features
+## 🔍 About
+
+Simple script analyzing **pre-coded** book and displaying:
+- 📄 Unique words + number of times used
+- 🔡 Unique letters and symbols + number of times used
+
+---
+
+## 🗓 Planned Features
 - 💻 Command line arguments support
 - 📁 File selection
 - 🎨 Simple GUI
