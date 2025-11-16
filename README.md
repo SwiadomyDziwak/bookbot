@@ -10,3 +10,7 @@ Simple script analyzing **pre-coded** book and displaying:
 - 💻 Command line arguments support
 - 📁 File selection
 - 🎨 Simple GUI
+
+## 🎓 Course ToDo
+
+- 📁 Book/file selection
