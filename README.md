@@ -11,6 +11,8 @@ Simple script analyzing **pre-coded** book and displaying:
 - 📁 File selection
 - 🎨 Simple GUI
 
+---
+
 ## 🎓 Course ToDo
 
 - 📁 Book/file selection
